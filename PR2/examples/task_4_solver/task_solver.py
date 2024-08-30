@@ -9,10 +9,10 @@ from pr2.tcp import PersistentTcpClient, json2bin
 
 
 class DummyPlanner:
-    """A dummy planner for task 3 (seed = 88)
+    """A dummy planner for task 4 (seed = 66)
 
     It produces a pre-computed velocity command for accomplishing
-    task 1 with random seed 88.
+    task 4 with random seed 66.
     """
 
     def __init__(self) -> None:

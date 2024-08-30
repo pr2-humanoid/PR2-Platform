@@ -13,7 +13,7 @@ TERMINATION_CFG = {
     "goal_position": (0.23457, -1.44135, 0.593),
     "distance_tol": 0.2,
     "falling_threshold": 0.41,
-    "max_steps": 500000,
+    "max_steps": 180000,
     "button_contact_sensor": {
         "object_name": "button_4_link",
         "max_step": 200,
