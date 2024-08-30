@@ -39,10 +39,11 @@ Before getting started, ensure that the system has the latest [NVIDIA Driver](ht
    cd PR2-Platform/PR2
    ```
 ### Download the Asset
-   Use the following commands to download and place the asset in the PR2/data directory. 
+   Use the following commands to download and place the asset in the PR2-Platform/PR2/data directory. 
    ```bash
    wget https://github.com/pr2-humanoid/PR2-Platform/releases/download/beta/data-v0.0.1.zip
-   unzip data-v0.0.1.zip -d ./data
+   unzip data-v0.0.1.zip -d . 
+   rm -rf data-v0.0.1.zip
    ```
       
 ### Setting Up Docker
@@ -50,13 +51,13 @@ Before getting started, ensure that the system has the latest [NVIDIA Driver](ht
 1. **Build Docker Image**
    Run the following command:
    ```bash
-   bash docker/scripts/build-dev.sh
+   bash docker/script/build-pr2.sh
    ```
 
 2. **Run the Docker Image**
    To set up the PR2 environment, execute:
    ```bash
-   bash docker/scripts/run-dev.sh
+   bash docker/script/run-pr2.sh
    ```
    This script binds your local repository directory to `/PR2/` inside Docker and initiates a new bash shell.
 
