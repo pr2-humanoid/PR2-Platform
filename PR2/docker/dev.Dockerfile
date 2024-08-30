@@ -11,7 +11,7 @@ RUN apt-get update \
         libgflags2.2 \
         libsdl2-2.0-0 \
         libsdl2-ttf-2.0-0 \
-        drake-dev \
+        drake-dev=1.23* \
     && rm -rf /var/lib/apt/lists/*
 
 RUN cd / \
@@ -23,4 +23,4 @@ RUN cd / \
 RUN /isaac-sim/python.sh -m pip install --upgrade pip
 
 WORKDIR /PR2/
-ENTRYPOINT ["bash", "/PR2/docker/scripts/main-dev.sh"]
+ENTRYPOINT ["bash", "/PR2/docker/script/main-pr2.sh"]

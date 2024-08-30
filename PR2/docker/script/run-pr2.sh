@@ -2,7 +2,7 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 PROJECT_DIR=$(realpath "$SCRIPT_DIR/../../")
 
 xhost +
-docker run --name PR2-dev -it --gpus all -e "ACCEPT_EULA=Y" --rm --network=host \
+docker run --name pr2-challenge -it --gpus all -e "ACCEPT_EULA=Y" --rm --network=host \
   --ulimit rtprio=99 \
   -e "PRIVACY_CONSENT=Y" \
   -v $HOME/.Xauthority:/root/.Xauthority \
@@ -16,4 +16,4 @@ docker run --name PR2-dev -it --gpus all -e "ACCEPT_EULA=Y" --rm --network=host 
   -v ~/docker/isaac-sim_2023.1.0/data:/root/.local/share/ov/data:rw \
   -v ~/docker/isaac-sim_2023.1.0/documents:/root/Documents:rw \
   -v $PROJECT_DIR:/PR2:rw \
-  PR2-dev bash
+  pr2-challenge bash

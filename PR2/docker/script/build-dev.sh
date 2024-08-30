@@ -1,1 +1,0 @@
-docker build -f docker/dev.Dockerfile -t PR2-dev .
