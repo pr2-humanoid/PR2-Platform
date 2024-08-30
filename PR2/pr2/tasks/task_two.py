@@ -15,7 +15,7 @@ from pr2.utils import (
 # pylint: disable=duplicate-code
 TERMINATION_CFG = {
     "falling_threshold": 0.26,
-    "max_steps": 500000,
+    "max_steps": 120000,
     "radian_threshold": 0.785,
 }
 PICK_CFG = {

@@ -13,7 +13,7 @@ TERMINATION_CFG = {
     "goal_position": (0.23457, -3.53851, 0.296),
     "distance_tol": 0.2,
     "falling_threshold": 0.28,
-    "max_steps": 500000,
+    "max_steps": 120000,
 }
 START_POS_CFG = {
     "x1": -0.368,
