@@ -12,7 +12,7 @@ OBSTACLE_CFG = {"constant_vel_Y": 1.0, "start_y": -5.85, "end_y": -7.5}
 TERMINATION_CFG = {
     "distance_tol": 0.2,
     "falling_threshold": 0.26,
-    "max_steps": 50000,
+    "max_steps": 120000,
     "comparator_offset": 0.4,
     "distance_axis": "y",
     "comparator": ">",

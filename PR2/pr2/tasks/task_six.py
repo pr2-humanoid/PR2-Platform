@@ -16,7 +16,7 @@ from pr2.utils import Falling, PositionComparator, TimeOut
 TERMINATION_CFG = {
     "container": "coffeetable_9_link",
     "falling_threshold": 0.78506,
-    "max_steps": 500000,
+    "max_steps": 300000,
 }
 
 PICK_CFG = {
