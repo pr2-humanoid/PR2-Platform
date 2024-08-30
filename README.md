@@ -70,3 +70,11 @@ bash examples/launch_task.sh <task-id>
 ```
 Replace `<task-id>` with an integer between 1 and 6 to select the specific demo task you want to present.
 
+## Test Your Solution
+
+To test your TaskSolver, execute:
+
+```bash
+bash submission/launch_task.sh <task-id>
+```
+Replace `<task-id>` with an integer between 1 and 6 to select the specific demo task you want to present.
