@@ -1,0 +1,69 @@
+[build-system]
+requires = ["setuptools >= 61.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pr2"
+dynamic = ['version']
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pygame",
+]
+
+[project.optional-dependencies]
+dev = [
+    "mkdocs==1.2.4",
+    "mkdocs-autorefs",
+    "mkdocs-material==8.2.7",
+    "mkdocstrings[python]",
+    "isort",
+    "black",
+    "ruff",
+    "flake8",
+    "pylint",
+    "pre-commit",
+]
+
+[tool.setuptools.packages.find]
+include = ["pr2*"]
+
+[tool.setuptools.dynamic]
+version = { attr = "pr2.__version__" }
+
+[tool.distutils.egg_info]
+egg_base = "/tmp"
+
+
+[tool.ruff]
+select = ["E", "F", "PL", "B", "N", "I"]
+ignore = ["PLR0913"]
+extend-exclude = ["*_pb2.py", "*_grpc.py"]
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.pylint]
+max-line-length = 88
+max-public-methods = 25
+disable = [
+    "C0114", "C0115", "C0116",
+    "R0801", "R0902", "R0903", "R0904", "R0913", "R0914",
+    "W0511",
+]
+ignored-modules = "omni,omni.isaac,omni.kit,pxr,torch,PIL,carb,numpy,scipy"
+variable-rgx = "[a-z_][a-z0-9_]*$"
+good-names = ['i', 'j', 'k', 'ex', 'Run', '_', 'dt', 'ip']
+
+[tool.pylint.MASTER]
+ignore-patterns = ".*_pb2.py,.*_grpc.py"
+
+[tool.black]
+exclude = '''
+(
+    .*_pb2.py
+    | .*_grpc.py
+
+    | build
+)
+'''
