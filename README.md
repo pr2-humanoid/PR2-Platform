@@ -78,3 +78,7 @@ To test your TaskSolver, execute:
 bash submission/launch_task.sh <task-id>
 ```
 Replace `<task-id>` with an integer between 1 and 6 to select the specific demo task you want to present.
+
+## Contributing to PR2-Platform
+
+We warmly welcome contributions from the community to help enhance and refine this platform for the benefit of all users. Whether it’s through bug reports, feature requests, or direct code contributions, your input is invaluable to us. If you find this project beneficial, we would greatly appreciate your follow and a star.
