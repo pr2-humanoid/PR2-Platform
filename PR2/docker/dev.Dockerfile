@@ -15,7 +15,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 RUN cd / \
-    && wget "https://github.com/pr2-humanoid/PR2-Platform/releases/download/beta/leju_controller-v4.zip" \
+    && wget "https://github.com/pr2-humanoid/PR2-Platform/releases/download/v0.1.0/leju_controller-v4.zip" \
     && unzip leju_controller-v4.zip \
     && rm -rf leju_controller-v4.zip
 
