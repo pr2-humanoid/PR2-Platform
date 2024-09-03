@@ -1,7 +1,7 @@
 from typing import Dict, Tuple
 
 import pr2  
-from pr2.agent.agent import Agent
+from pr2.robot.robot import Robot
 from pr2.objects.object import Object
 from pr2.scene.scene import Scene
 from pr2.tasks.task_five import TaskFive
@@ -95,7 +95,7 @@ class Env:
 
         Args:
             action (Dict): each entry should
-                map agent's joint name to corresponding control mode and val
+                map robot's joint name to corresponding control mode and val
 
         Returns:
             3-tuple:
@@ -108,10 +108,10 @@ class Env:
         return done, success, obs
 
     @property
-    def agent(self) -> Agent:
+    def agent(self) -> Robot:
         """
         Returns:
-            Agent: agent in the env
+            Robot: robot in the env
         """
         return self._agent
 
@@ -152,7 +152,7 @@ class Env:
         """
         Import agent
         """
-        self._agent = Agent()
+        self._agent = Robot()
 
     def _load_task(self) -> None:
         """
