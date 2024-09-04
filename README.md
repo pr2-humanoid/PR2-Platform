@@ -33,12 +33,12 @@ Before getting started, ensure that the system has the latest [NVIDIA Driver](ht
  
 ## PR2 Environment Setup
 
-### Clone PR2-platform repo
+### 🚀 Clone PR2-platform repo
    ```bash
    git clone git@github.com:pr2-humanoid/PR2-Platform.git
    cd PR2-Platform/PR2
    ```
-### Download the Asset
+### 🏡 Download the Asset
    Use the following commands to download and place the asset in the PR2-Platform/PR2/data directory. 
    ```bash
    wget https://github.com/pr2-humanoid/PR2-Platform/releases/download/beta/data-v0.0.1.zip
@@ -46,7 +46,7 @@ Before getting started, ensure that the system has the latest [NVIDIA Driver](ht
    rm -rf data-v0.0.1.zip
    ```
       
-### Setting Up Docker
+### 🐳 Setting Up Docker
 
 1. **Build Docker Image**
    Run the following command:
@@ -61,7 +61,7 @@ Before getting started, ensure that the system has the latest [NVIDIA Driver](ht
    ```
    This script binds your local repository directory to `/PR2/` inside Docker and initiates a new bash shell.
 
-## Running a Demo
+### 📹 Running a Demo
 
 Once you are in the Docker environment, you can start a demo with:
 
@@ -70,7 +70,7 @@ bash examples/launch_task.sh <task-id>
 ```
 Replace `<task-id>` with an integer between 1 and 6 to select the specific demo task you want to present.
 
-## Test Your Solution
+### Test Your Solution
 
 To test your TaskSolver, execute:
 
