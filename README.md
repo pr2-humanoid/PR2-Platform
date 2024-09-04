@@ -42,7 +42,7 @@ Before getting started, ensure that the system has the latest [NVIDIA Driver](ht
  
 ## 🤖 PR2 Environment Setup
 
-### 🚀 Clone PR2-platform repo
+### 🚀 Clone PR2-Platform repo
    ```bash
    git clone git@github.com:pr2-humanoid/PR2-Platform.git
    cd PR2-Platform/PR2
@@ -86,7 +86,7 @@ To test your TaskSolver, execute:
 ```bash
 bash submission/launch_task.sh <task-id>
 ```
-Replace `<task-id>` with an integer between 1 and 6 to select the specific demo task you want to present.
+Replace `<task-id>` with an integer between 1 and 6 to select the specific task you want to test.
 
 ## ⭐ Contributing to PR2-Platform
 
