@@ -1,16 +1,16 @@
 # PR2-Platform 
 ![splash](Docs/assets/teaser.png)
 
-## System Requirements
+## ✅ System Requirements
 
 The following steps are taken from the NVIDIA Omniverse Isaac Sim documentation on [container installation](https://docs.omniverse.nvidia.com/isaacsim/latest/installation/install_container.html).
 
-### Pre-Requisites
+### 🍀 Pre-Requisites
 
 Before getting started, ensure that the system has the latest [NVIDIA Driver](https://www.nvidia.com/en-us/drivers/unix/) and the [NVIDIA Container Toolkit](https://docs.omniverse.nvidia.com/isaacsim/latest/installation/install_container.html) installed.
 
 
-### Obtaining the Isaac Sim Container
+### 📁 Obtaining the Isaac Sim Container
 1. **Get access to the Isaac Sim Container by joining the NVIDIA Developer Program credentials**
 2. **Generate your [NGC API Key](https://docs.nvidia.com/ngc/ngc-overview/index.html#generating-api-key) to access locked container images from NVIDIA GPU Cloud (NGC).**
    - This step requires you to create an [NGC account](https://ngc.nvidia.com/signin) if you do not already have one.
@@ -31,7 +31,7 @@ Before getting started, ensure that the system has the latest [NVIDIA Driver](ht
    ```
 
  
-## PR2 Environment Setup
+## 🤖 PR2 Environment Setup
 
 ### 🚀 Clone PR2-platform repo
    ```bash
@@ -70,7 +70,7 @@ bash examples/launch_task.sh <task-id>
 ```
 Replace `<task-id>` with an integer between 1 and 6 to select the specific demo task you want to present.
 
-### Test Your Solution
+### 💯 Test Your Solution
 
 To test your TaskSolver, execute:
 
@@ -79,6 +79,6 @@ bash submission/launch_task.sh <task-id>
 ```
 Replace `<task-id>` with an integer between 1 and 6 to select the specific demo task you want to present.
 
-## Contributing to PR2-Platform
+## ⭐ Contributing to PR2-Platform
 
 We warmly welcome contributions from the community to help enhance and refine this platform for the benefit of all users. Whether it’s through bug reports, feature requests, or direct code contributions, your input is invaluable to us. If you find this project beneficial, we would greatly appreciate your follow and a star.
