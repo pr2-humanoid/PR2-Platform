@@ -11,7 +11,7 @@ from omni.isaac.core.utils.stage import add_reference_to_stage
 import pr2 
 from pr2.utils import convert_data_format
 
-from .agent_cfg import KuavoCfg
+from .robot_cfg import KuavoCfg
 
 AGENT_USD_PATH = str(pr2.ROOT_PATH.parent / "data" / "agent" / "main.usd")
 
