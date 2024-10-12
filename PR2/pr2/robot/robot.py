@@ -16,7 +16,7 @@ from .robot_cfg import KuavoCfg
 AGENT_USD_PATH = str(pr2.ROOT_PATH.parent / "data" / "agent" / "main.usd")
 
 
-class Agent(ArticulationView):
+class Robot(ArticulationView):
 
     """Configuration for the robot."""
 

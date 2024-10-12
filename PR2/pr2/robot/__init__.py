@@ -1,1 +1,1 @@
-from PR2.pr2.robot.robot import Robot
+from pr2.robot.robot import Robot
