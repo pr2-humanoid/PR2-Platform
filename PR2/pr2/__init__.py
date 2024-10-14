@@ -2,7 +2,7 @@ __version__ = "0.2.0"
 import sys
 from pathlib import Path
 
-from omni.isaac.kit import SimulationApp
+from isaacsim import SimulationApp
 
 app = SimulationApp(
     {"headless": False, "renderer": "RayTracedLighting", "multi_gpu": False}
