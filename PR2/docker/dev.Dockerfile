@@ -1,4 +1,4 @@
-FROM nvcr.io/nvidia/isaac-sim:2023.1.0
+FROM nvcr.io/nvidia/isaac-sim:4.2.0
 
 
 RUN apt-get update \
