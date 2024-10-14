@@ -13,9 +13,9 @@ from .termination_conditions import (
 )
 
 
-def is_isaac_sim_2023():
-    # ruff: noqa: PLR2004
-    return int(get_version()[2]) == 2023
+def is_isaac_sim_4_2_0():
+    # ruff: noqa: PLR2004 
+    return get_version()[0] == '4.2.0'
 
 
 def set_global_seed(seed):

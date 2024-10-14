@@ -12,7 +12,7 @@ from scipy.spatial.transform import Rotation
 
 import pr2
 from pr2.objects.object import Object
-from pr2.utils import convert_data_format, is_isaac_sim_2023
+from pr2.utils import convert_data_format, is_isaac_sim_4_2_0
 
 
 class BaseTask:
@@ -121,7 +121,7 @@ class BaseTask:
 
         # Add light
         light_attr = {"intensity": 1000.0, "color": (1.0, 1.0, 1.0), "diffuse": 3}
-        if is_isaac_sim_2023():
+        if is_isaac_sim_4_2_0():
             light_attr = {f"inputs:{k}": v for k, v in light_attr.items()}
 
         prim_utils.create_prim(
