@@ -50,9 +50,9 @@ Before getting started, ensure that the system has the latest [NVIDIA Driver](ht
 ### 🏡 Download the Asset
    Use the following commands to download and place the asset in the PR2-Platform/PR2/data directory. 
    ```bash
-   wget https://github.com/pr2-humanoid/PR2-Platform/releases/download/v0.1.0/data-v0.0.1.zip
-   unzip data-v0.0.1.zip -d . 
-   rm -rf data-v0.0.1.zip
+   wget https://github.com/pr2-humanoid/PR2-Platform/releases/download/v0.2.1-beta/data-v0.0.2.zip
+   unzip -o data-v0.0.2.zip -d . 
+   rm -rf data-v0.0.2.zip
    ```
       
 ### 🐳 Setting Up Docker
