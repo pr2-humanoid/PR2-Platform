@@ -1,1 +1,1 @@
-docker build -f docker/dev.Dockerfile -t pr2-challenge:v0.2.0 .
+docker build -f docker/dev.Dockerfile -t pr2-challenge:v0.2.1 .
