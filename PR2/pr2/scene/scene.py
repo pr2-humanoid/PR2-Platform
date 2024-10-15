@@ -4,8 +4,7 @@ from typing import Dict
 from omni.isaac.core.prims import XFormPrim
 from omni.isaac.core.utils.stage import add_reference_to_stage
 
-import pr2 
-from pr2.objects.articulated_object import ArticulatedObject
+import pr2  
 from pr2.objects.object import Object
 
 SCENE_USD_PATH = str(pr2.ROOT_PATH.parent / "data" / "scene" / "main.usd")
@@ -27,11 +26,8 @@ class Scene:
             data = json.load(f)
             for obj_baselink, config in data["objects"].items():
                 # Add rigid objects only
-                if config["rigidbody"] is True:
-                    if config["articulated"] is True:
-                        obj = ArticulatedObject(name=obj_baselink)
-                    else:
-                        obj = Object(name=obj_baselink)
+                if config["rigidbody"] is True: 
+                    obj = Object(name=obj_baselink)
                     self._objects[obj_baselink] = obj
                     obj.initialize()
 

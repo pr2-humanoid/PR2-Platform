@@ -6,8 +6,9 @@ import torch
 from omni.isaac.core.articulations.articulation import Articulation
 from omni.isaac.core.utils.bounds import compute_aabb, create_bbox_cache
 from omni.isaac.sensor import _sensor
-
-
+from scipy.spatial.transform import Rotation as R
+from pxr import PhysxSchema
+from omni.isaac.core.utils.stage import get_current_stage
 class ReachingGoal:
     """
     Task terminates when the agent reaches the
@@ -95,6 +96,10 @@ class Contact:
         self._cs = _sensor.acquire_contact_sensor_interface()
         self._object_name = object_name
         # Add contact sensor to the object
+        stage = get_current_stage()
+        contactprim = stage.GetPrimAtPath(f"/World/Scene/{object_name}")
+        PhysxSchema.PhysxContactReportAPI.Apply(contactprim)
+
         omni.kit.commands.execute(
             "IsaacSensorCreateContactSensor",
             path="/contact_sensor",
@@ -104,14 +109,13 @@ class Contact:
             color=(1, 0, 0, 1),
             radius=sensor_radius,
             sensor_period=-1,
-            translation=sensor_offset,
-            visualize=True,
+            translation=sensor_offset 
         )
 
     def check(self) -> bool:
         # Terminate when the object has been contacted
         # for more than the specified duration
-        result = self._cs.get_sensor_sim_reading(
+        result = self._cs.get_sensor_reading(
             f"/World/Scene/{self._object_name}/contact_sensor"
         ).inContact
 
@@ -170,7 +174,12 @@ class Rotation:
     def __init__(self, obj: Articulation, radian: float) -> None:
         self._obj = obj
         self._threshold = radian
+        q1 = obj.get_position_orientation()[1] 
+        self._r1 = R.from_quat(q1)
 
     def check(self) -> bool:
-        cur_pos = self._obj.get_joint_positions().numpy()[0]
-        return abs(cur_pos) >= self._threshold
+        q2 = self._obj.get_position_orientation()[1]
+        r2 = R.from_quat(q2)
+        r_relative = r2 * self._r1.inv()
+        angle_degrees = r_relative.magnitude() 
+        return abs(angle_degrees) >= self._threshold

@@ -71,7 +71,7 @@ class Object:
         Returns:
             2-tuple:
                 - 3-array: (x,y,z) position in the world frame
-                - 4-array: (x,y,z,w) quaternion orientation in
+                - 4-array: (w, x, y, z) quaternion orientation in
                 the world frame
         """
         return self._xprim.get_world_pose()
