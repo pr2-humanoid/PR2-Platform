@@ -1,0 +1,81 @@
+services:
+  student1:
+    image: pr2-challenge-ssh
+    container_name: student1
+    stdin_open: true  
+    tty: true
+    runtime: nvidia   
+    environment:
+      - ACCEPT_EULA=Y
+      - PRIVACY_CONSENT=Y
+      - DISPLAY=${DISPLAY}   
+      - PROJECT_DIR=${PROJECT_DIR}    
+      - PORT_8211=${PORT_8211_STU1}    
+      - PORT_49100=${PORT_49100_STU1}  
+      - SSH_PORT=${SSH_PORT_STU1}  
+      - FILE_1=${FILE_1}  
+      - FILE_2=${FILE_2}  
+    ports:
+      - "${SSH_PORT_STU1}:22"   
+      - "${PORT_8211_STU1}:8211"  #  NOTE： it can't be 8311 8011 8211 etc
+      - "${PORT_49100_STU1}:${PORT_49100_STU1}"  
+      - "47995-48012:47995-48012" # TCP: 47995 to 48012
+      - "49000-49007:49000-49007" # TCP: 49000 to 49007
+      - "49100:49100" # TCP: 49100
+      - "8111:8111" # USD Composer
+      - "8011:8011" #  Kit
+      - "8211:8211" # Isaac Sim
+      - "8311:8311" # Kaolin
+    volumes:
+      - $HOME/.Xauthority:/root/.Xauthority
+      - $PROJECT_DIR:/PR2:rw 
+      - kit_cache:/isaac-sim/kit/cache:rw
+      - root_cache:/root/.cache:rw 
+      - compute_cache:/root/.nv/ComputeCache:rw
+      - log_cache:/root/.nvidia-omniverse/logs:rw
+      - data_cache:/root/.local/share/ov/data:rw
+      - documents_cache:/root/Documents:rw 
+      - utmp_cache:/var/run/utmp:rw
+ 
+  # student2:
+  #   image: pr2-challenge-ssh
+  #   container_name: student2
+  #   stdin_open: true  
+  #   tty: true
+  #   runtime: nvidia  
+  #   environment:
+  #     - ACCEPT_EULA=Y
+  #     - PRIVACY_CONSENT=Y
+  #     - DISPLAY=${DISPLAY}   
+  #     - PROJECT_DIR=${PROJECT_DIR}    
+  #     - PORT_8211=${PORT_8211_STU2}    
+  #     - PORT_49100=${PORT_49100_STU2}  
+  #     - SSH_PORT=${SSH_PORT_STU2}  
+  #     - FILE_1=${FILE_1}  
+  #     - FILE_2=${FILE_2}    
+  #   ports:
+  #     - "${SSH_PORT_STU2}:22"  # 映射 SSH 端口
+  #     - "${PORT_8211_STU2}:8211"  #  NOTE： it can't be 8311 8011 8211 etc
+  #     - "${PORT_49100_STU2}:${PORT_49100_STU2}"  # 映射端口 49100 
+  #     - "47995-48012:47995-48012"
+  #     - "49000-49007:49000-49007"
+  #     - "49100:49100" 
+  #   volumes:
+  #     - $HOME/.Xauthority:/root/.Xauthority
+  #     - $PROJECT_DIR:/PR2:rw 
+  #     - kit_cache:/isaac-sim/kit/cache:rw
+  #     - root_cache:/root/.cache:rw 
+  #     - compute_cache:/root/.nv/ComputeCache:rw
+  #     - log_cache:/root/.nvidia-omniverse/logs:rw
+  #     - data_cache:/root/.local/share/ov/data:rw
+  #     - documents_cache:/root/Documents:rw 
+  #     - utmp_cache:/var/run/utmp:rw
+  
+volumes:
+  kit_cache: 
+  root_cache:
+  compute_cache:
+  log_cache:
+  data_cache:
+  documents_cache:
+  utmp_cache:

@@ -4,8 +4,10 @@ from pathlib import Path
 
 from omni.isaac.kit import SimulationApp
 
+
+
 app = SimulationApp(
-    {"headless": False, "renderer": "RayTracedLighting", "multi_gpu": False}
+    {"headless": True, "renderer": "RayTracedLighting", "multi_gpu": False}
 )
 
 ROOT_PATH = Path(__file__).parent
@@ -17,7 +19,8 @@ def start():
     from omni.isaac.core.utils.extensions import enable_extension
 
     enable_extension("omni.isaac.version")
-
+    enable_extension("omni.services.streamclient.webrtc")
+    
     simulator = SimulationContext(backend="torch", set_defaults=True)
     # defaults settings:
     #    [physics_dt = 1.0/ 60.0,
