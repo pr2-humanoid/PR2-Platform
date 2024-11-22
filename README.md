@@ -62,13 +62,35 @@ Before getting started, ensure that the system has the latest [NVIDIA Driver](ht
    ```bash
    bash docker/script/build-pr2.sh
    ```
+ 
+2. **Start Docker on the Server** 
+   Server-side Execution:
 
-2. **Run the Docker Image**
-   To set up the PR2 environment, execute:
-   ```bash
-   bash docker/script/run-pr2.sh
+   Run the following script to bind your local repository directory to /PR2/ inside the Docker container and start a new bash shell:
    ```
-   This script binds your local repository directory to `/PR2/` inside Docker and initiates a new bash shell.
+   bash docker/script/run-pr2-host.sh
+   ``` 
+
+   Client-side Execution:
+   SSH into the docker container:
+   ```
+   ssh root@<server IP address> -p 2222
+   ```
+
+   After entering the password, run the following commands: 
+   ```
+   cd ../PR2/
+   bash docker/script/main-pr2.sh 
+   ```
+
+   Access via Web Browser:
+   Open a web browser and navigate to the following URL:
+   ```
+   http://<server IP address>:8211/streaming/webrtc-client?server=<server IP address> 
+   ```
+   
+   NOTE:
+   The WebRTC Browser Client may not work with Firefox. Using the Google Chrome or Chromium browser is recommended. 
 
 ### 📹 Running a Demo
 
