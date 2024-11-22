@@ -17,7 +17,7 @@ SSH_PORT_STU1=2221
 #--------Student 2 Configuration--------------
 PORT_8211_STU2=8112 # NOTE： it can't be 8311 8011 8211 etc
 PORT_49100_STU2=49102 # NOTE： it can't be 49100 etc
-SSH_PORT_STU2=2222
+SSH_PORT_STU2=2223
 
  
 export PROJECT_DIR
