@@ -2,7 +2,7 @@
 <div >
     <a href="https://arxiv.org/abs/2409.01559" target="_blank">
     <img src="https://img.shields.io/badge/Paper-arXiv-green" alt="Paper arXiv"></a> 
-    <a href="https://www.youtube.com/watch?v=VycZ9Po9hNg" target="_blank">
+    <a href="https://www.youtube.com/watch?v=O0xRILrc6nk" target="_blank">
     <img src="https://img.shields.io/badge/Video-Demos-fffc4f" alt="Demos"/></a>
     <a href="https://pr2-humanoid.github.io/" target="_blank">
     <img src="https://img.shields.io/badge/Page-PR2-3083ff" alt="Website"/></a>
