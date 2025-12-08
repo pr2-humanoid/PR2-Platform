@@ -2,7 +2,7 @@ __version__ = "0.0.2"
 import sys
 from pathlib import Path
 
-from omni.isaac.kit import SimulationApp
+from isaacsim import SimulationApp
 
 app = SimulationApp(
     {"headless": False, "renderer": "RayTracedLighting", "multi_gpu": False}
@@ -13,8 +13,8 @@ ROOT_PATH = Path(__file__).parent
 
 def start():
     # pylint: disable=import-outside-toplevel
-    from omni.isaac.core.simulation_context import SimulationContext
-    from omni.isaac.core.utils.extensions import enable_extension
+    from isaacsim.core.api import SimulationContext
+    from isaacsim.core.utils.extensions import enable_extension
 
     enable_extension("omni.isaac.version")
 
