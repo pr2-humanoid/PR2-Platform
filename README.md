@@ -11,34 +11,12 @@
 ![splash](Docs/assets/teaser.png)
 
 ## ✅ System Requirements
-
-The following steps are taken from the NVIDIA Omniverse Isaac Sim documentation on [container installation](https://docs.omniverse.nvidia.com/isaacsim/latest/installation/install_container.html).
-
+ 
 ### 🍀 Pre-Requisites
 
-Before getting started, ensure that the system has the latest [NVIDIA Driver](https://www.nvidia.com/en-us/drivers/unix/) and the [NVIDIA Container Toolkit](https://docs.omniverse.nvidia.com/isaacsim/latest/installation/install_container.html) installed.
+Before getting started, ensure that the system has met the system requirements [NVIDIA Driver](https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/requirements.html#system-requirements) and has the [NVIDIA Container Toolkit](https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/install_container.html) installed.
 
-
-### 📁 Obtaining the Isaac Sim Container
-1. **Get access to the Isaac Sim Container by joining the NVIDIA Developer Program credentials**
-2. **Generate your [NGC API Key](https://docs.nvidia.com/ngc/ngc-overview/index.html#generating-api-key) to access locked container images from NVIDIA GPU Cloud (NGC).**
-   - This step requires you to create an [NGC account](https://ngc.nvidia.com/signin) if you do not already have one.
-   - You would also need to install the [NGC CLI](https://org.ngc.nvidia.com/setup/installers/cli) to perform operations from the command line. 
-   - Once you have your generated API key and have installed the NGC CLI, you need to log in to NGC from the terminal.
-   ```bash
-   ngc config set
-   ```
-
-3. **Use the command line to login to your NGC Account.**
-   ```bash
-      docker login nvcr.io
-   ```
-   - For the username, enter $oauthtoken exactly as shown. It is a special username that is used to authenticate with NGC.
-   ```bash
-      Username: $oauthtoken
-      Password: <Your NGC API Key>
-   ```
-
+ 
  
 ## 🤖 PR2 Environment Setup
 
