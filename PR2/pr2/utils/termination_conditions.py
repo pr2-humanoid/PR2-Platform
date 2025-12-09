@@ -3,9 +3,9 @@ from typing import Tuple
 import numpy as np
 import omni
 import torch
-from omni.isaac.core.articulations.articulation import Articulation
-from omni.isaac.core.utils.bounds import compute_aabb, create_bbox_cache
-from omni.isaac.sensor import _sensor
+from isaacsim.core.prims import Articulation
+from isaacsim.core.utils.bounds import compute_aabb, create_bbox_cache
+from isaacsim.sensors.physics import _sensor
 
 
 class ReachingGoal:

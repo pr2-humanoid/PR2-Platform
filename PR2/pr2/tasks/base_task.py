@@ -3,16 +3,16 @@ import random
 from abc import abstractmethod
 from typing import Dict, List, Tuple
 
-import omni.isaac.core.utils.prims as prim_utils
+import isaacsim.core.utils.prims as prim_utils
 import torch
-from omni.isaac.core.utils.prims import get_prim_at_path
-from omni.isaac.core.utils.viewports import set_camera_view
+from isaacsim.core.utils.prims import get_prim_at_path
+from isaacsim.core.utils.viewports import set_camera_view
 from pxr import Gf, PhysxSchema, Sdf, UsdGeom, UsdPhysics
 from scipy.spatial.transform import Rotation
 
 import pr2
 from pr2.objects.object import Object
-from pr2.utils import convert_data_format, is_isaac_sim_2023
+from pr2.utils import convert_data_format, is_isaac_sim_5_0
 
 
 class BaseTask:
@@ -121,7 +121,7 @@ class BaseTask:
 
         # Add light
         light_attr = {"intensity": 1000.0, "color": (1.0, 1.0, 1.0), "diffuse": 3}
-        if is_isaac_sim_2023():
+        if is_isaac_sim_5_0():
             light_attr = {f"inputs:{k}": v for k, v in light_attr.items()}
 
         prim_utils.create_prim(

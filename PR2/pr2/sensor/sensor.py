@@ -1,5 +1,5 @@
-from typing import Dict 
-import omni.replicator.core as rep 
+from typing import Dict
+import omni.replicator.core as rep
 
 # Camera param: https://docs.omniverse.nvidia.com/py/replicator/1.10.10/source/extensions/omni.replicator.core/docs/API.html#cameras  # noqa # pylint: disable=C0301
 

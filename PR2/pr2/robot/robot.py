@@ -3,12 +3,12 @@ from typing import Dict, List, Optional, Sequence, Union
 import numpy as np
 import omni.isaac.core.utils.torch as torch_utils
 import torch
-from omni.isaac.core.articulations.articulation_view import ArticulationView
-from omni.isaac.core.prims import RigidPrimView
-from omni.isaac.core.utils.prims import get_prim_at_path
-from omni.isaac.core.utils.stage import add_reference_to_stage
+from omni.isaac.core.articulations import ArticulationView
+from omni.isaac.core.prims.rigid_prim_view import RigidPrimView
+from isaacsim.core.utils.prims import get_prim_at_path
+from isaacsim.core.utils.stage import add_reference_to_stage
 
-import pr2 
+import pr2
 from pr2.utils import convert_data_format
 
 from .robot_cfg import KuavoCfg
@@ -173,7 +173,7 @@ class Robot(ArticulationView):
         """Post processing of configuration parameters."""
         # -- meta_info: joint index
         self._arm_idx = self.cfg.meta_info.arm_idx
-        self._leg_idx = self.cfg.meta_info.leg_idx 
+        self._leg_idx = self.cfg.meta_info.leg_idx
 
         # -- dof state
         self._default_dof_pos = convert_data_format(

@@ -1,6 +1,6 @@
 from typing import Dict, Tuple
 
-import pr2  
+import pr2
 from pr2.robot.robot import Robot
 from pr2.objects.object import Object
 from pr2.scene.scene import Scene

@@ -1,10 +1,10 @@
 import json
 from typing import Dict
 
-from omni.isaac.core.prims import XFormPrim
-from omni.isaac.core.utils.stage import add_reference_to_stage
+from isaacsim.core.prims import SingleXFormPrim, XFormPrim
+from isaacsim.core.utils.stage import add_reference_to_stage
 
-import pr2 
+import pr2
 from pr2.objects.articulated_object import ArticulatedObject
 from pr2.objects.object import Object
 
@@ -15,7 +15,7 @@ SCENE_METADATA_PATH = str(pr2.ROOT_PATH.parent / "data" / "scene" / "obj_cfg.jso
 class Scene:
     def __init__(self):
         self._prim_path = "/World/Scene"
-        self._prim = XFormPrim(self._prim_path)
+        self._prim = SingleXFormPrim(self._prim_path)
         self._objects = {}
         # load scene to the stage
         add_reference_to_stage(usd_path=SCENE_USD_PATH, prim_path=self._prim_path)

@@ -1,7 +1,7 @@
 import random
 
 import numpy as np
-from omni.isaac.version import get_version
+from isaacsim.core.version import get_version
 
 from .termination_conditions import (
     Contact,
@@ -13,9 +13,9 @@ from .termination_conditions import (
 )
 
 
-def is_isaac_sim_2023():
+def is_isaac_sim_5_0():
     # ruff: noqa: PLR2004
-    return int(get_version()[2]) == 2023
+    return get_version()[0] == "5.0.0"
 
 
 def set_global_seed(seed):

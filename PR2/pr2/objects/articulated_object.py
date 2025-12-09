@@ -1,5 +1,4 @@
-from omni.isaac.core.articulations.articulation import Articulation
-
+from isaacsim.core.prims import SingleArticulation
 from pr2.objects.object import Object
 
 
@@ -7,7 +6,7 @@ from pr2.objects.object import Object
 class ArticulatedObject(Object):
     def __init__(self, name: str = "valve_47_link"):
         super().__init__(name)
-        self._art = Articulation(prim_path=self._prim_path)
+        self._art = SingleArticulation(prim_path=self._prim_path)
 
     def initialize(self):
         super().initialize()

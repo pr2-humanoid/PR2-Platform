@@ -2,8 +2,8 @@ from typing import Optional, Sequence, Tuple, Union
 
 import numpy as np
 import torch
-from omni.isaac.core.prims import XFormPrim
-from omni.isaac.core.utils.prims import get_prim_at_path
+from isaacsim.core.prims import XFormPrim
+from isaacsim.core.utils.prims import get_prim_at_path
 from omni.isaac.core.utils.semantics import add_update_semantics
 from pxr import Gf, PhysxSchema, UsdPhysics
 
