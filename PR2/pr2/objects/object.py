@@ -2,7 +2,7 @@ from typing import Optional, Sequence, Tuple, Union
 
 import numpy as np
 import torch
-from isaacsim.core.prims import XFormPrim
+from isaacsim.core.prims import SingleXFormPrim
 from isaacsim.core.utils.prims import get_prim_at_path
 from omni.isaac.core.utils.semantics import add_update_semantics
 from pxr import Gf, PhysxSchema, UsdPhysics
@@ -13,7 +13,7 @@ class Object:
         self._name = name
         self._prim_path = f"/World/Scene/{self._name}"
         self._prim = get_prim_at_path(self._prim_path)
-        self._xprim = XFormPrim(self._prim_path)
+        self._xprim = SingleXFormPrim(self._prim_path)
         self._rigid_api = None
         self._physx_rigid_api = None
         self._mass_api = None
