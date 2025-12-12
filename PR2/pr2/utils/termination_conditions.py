@@ -2,10 +2,11 @@ from typing import Tuple
 
 import numpy as np
 import omni
+import math
 import torch
-from isaacsim.core.prims import Articulation
 from isaacsim.core.utils.bounds import compute_aabb, create_bbox_cache
 from isaacsim.sensors.physics import _sensor
+from scipy.spatial.transform import Rotation as R
 
 
 class ReachingGoal:
@@ -167,10 +168,19 @@ class Rotation:
 
     """
 
-    def __init__(self, obj: Articulation, radian: float) -> None:
+    def __init__(self, obj: object, radian: float, isaac_5_0: bool = True) -> None:
         self._obj = obj
-        self._threshold = radian
+        self._isaac_5_0 = isaac_5_0
+        self._threshold = math.degrees(radian) if isaac_5_0 else radian
 
     def check(self) -> bool:
-        cur_pos = self._obj.get_joint_positions().numpy()[0]
+        if self._isaac_5_0:
+            quat_wxyz = self._obj.get_local_orientation().numpy()
+            quat_xyzw = quat_wxyz[[1, 2, 3, 0]]
+            rot = R.from_quat(quat_xyzw)
+            euler_deg = rot.as_euler("xyz", degrees=True)
+            cur_pos = euler_deg[2]
+        else:
+            cur_pos = self._obj.get_joint_positions().numpy()[0]
+
         return abs(cur_pos) >= self._threshold

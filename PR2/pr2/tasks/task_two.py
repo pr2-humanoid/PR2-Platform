@@ -11,6 +11,7 @@ from pr2.utils import (
     Rotation,
     TimeOut,
 )
+from pr2.utils import is_isaac_sim_5_0
 
 # pylint: disable=duplicate-code
 TERMINATION_CFG = {
@@ -63,7 +64,9 @@ class TaskTwo(BaseTask):
         agent.set_world_poses(positions=self.start_pos, orientations=self.start_ori)
 
         self._termination_conditions = {
-            "Rotation": Rotation(self._valve, TERMINATION_CFG["radian_threshold"]),
+            "Rotation": Rotation(
+                self._valve, TERMINATION_CFG["radian_threshold"], is_isaac_sim_5_0()
+            ),
             "TimeOut": TimeOut(TERMINATION_CFG["max_steps"]),
             "Falling": Falling(TERMINATION_CFG["falling_threshold"]),
         }

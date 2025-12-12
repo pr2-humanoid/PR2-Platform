@@ -71,10 +71,22 @@ class Object:
         Returns:
             2-tuple:
                 - 3-array: (x,y,z) position in the world frame
-                - 4-array: (x,y,z,w) quaternion orientation in
+                - 4-array: (w, x,y,z) quaternion orientation in
                 the world frame
         """
         return self._xprim.get_world_pose()
+
+    def get_local_orientation(
+        self,
+    ) -> Union[np.ndarray, torch.Tensor]:
+        """
+        Gets object's orientation with respect to the local's frame.
+
+        Returns:
+                - 4-array: (w, x,y,z) quaternion orientation in
+                the local frame
+        """
+        return self._xprim.get_local_pose()[1]
 
     def set_kinematic(self, flag: bool):
         if flag:

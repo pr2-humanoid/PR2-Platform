@@ -4,7 +4,7 @@ from pr2.objects.object import Object
 
 # pylint: disable=not-an-iterable
 class ArticulatedObject(Object):
-    def __init__(self, name: str = "valve_47_link"):
+    def __init__(self, name: str):
         super().__init__(name)
         self._art = SingleArticulation(prim_path=self._prim_path)
 
