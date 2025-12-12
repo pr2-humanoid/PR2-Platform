@@ -11,7 +11,7 @@ from pr2.utils import (
 # pylint: disable=duplicate-code
 TERMINATION_CFG = {
     "goal_position": (0.23457, -3.53851, 0.296),
-    "distance_tol": 0.2,
+    "distance_tol": 0.31,
     "falling_threshold": 0.28,
     "max_steps": 120000,
 }

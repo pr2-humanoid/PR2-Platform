@@ -32,6 +32,7 @@ class ReachingGoal:
         if isinstance(curpos, torch.Tensor):
             curpos = curpos.numpy()[0]
         dist = np.linalg.norm(curpos[0:2] - np.array(self._goal_position)[0:2])
+
         return dist < self._distance_tol
 
 

@@ -17,8 +17,8 @@ def start():
     from isaacsim.core.utils.extensions import enable_extension
 
     enable_extension("omni.isaac.version")
-    enable_extension("omni.physx.commands")
-    enable_extension("omni.usdphysics.ui")
+    # enable_extension("omni.physx.commands")
+    # enable_extension("omni.usdphysics.ui")
 
     simulator = SimulationContext(backend="torch", set_defaults=True)
     # defaults settings:
