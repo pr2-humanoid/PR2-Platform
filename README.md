@@ -10,6 +10,20 @@
 
 ![splash](Docs/assets/teaser.png)
 
+## 📚 Citation
+
+If you find this project useful in your research, please consider citing our work:
+
+```bibtex
+@article{liu2025pr2,
+  title={PR2: A Physics-and Photo-Realistic Humanoid Testbed With Pilot Study in Competition},
+  author={Liu, Hangxin and Xie, Qi and Zhang, Zeyu and Yuan, Tao and Wang, Song and Wang, Zaijin and Leng, Xiaokun and Sun, Lining and Zhang, Jingwen and He, Zhicheng and others},
+  journal={Journal of Field Robotics},
+  year={2025},
+  publisher={Wiley Online Library}
+}
+```
+
 ## ✅ System Requirements 
 
 ### 🍀 Pre-Requisites

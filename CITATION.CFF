@@ -1,0 +1,36 @@
+```yaml
+cff-version: 1.2.0
+title: "PR2-Platform"
+message: "If you use PR2-Platform in your research, please cite our Journal of Field Robotics paper."
+authors:
+  - family-names: Liu
+    given-names: Hangxin
+  - family-names: Xie
+    given-names: Qi
+  - family-names: Zhang
+    given-names: Zeyu
+  - family-names: Yuan
+    given-names: Tao
+  - family-names: Wang
+    given-names: Song
+  - family-names: Wang
+    given-names: Zaijin
+  - family-names: Leng
+    given-names: Xiaokun
+  - family-names: Sun
+    given-names: Lining
+  - family-names: Zhang
+    given-names: Jingwen
+  - family-names: He
+    given-names: Zhicheng
+  - family-names: Su
+    given-names: Yao 
+repository-code: https://github.com/pr2-humanoid/PR2-Platform
+url: https://github.com/pr2-humanoid/PR2-Platform
+license: Apache-2.0
+related-publications:
+  - type: article
+    title: "PR2: A Physics-and Photo-Realistic Humanoid Testbed With Pilot Study in Competition"
+    journal: "Journal of Field Robotics"
+    year: 2025
+ 
