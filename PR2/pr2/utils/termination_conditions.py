@@ -32,7 +32,6 @@ class ReachingGoal:
         if isinstance(curpos, torch.Tensor):
             curpos = curpos.numpy()[0]
         dist = np.linalg.norm(curpos[0:2] - np.array(self._goal_position)[0:2])
-
         return dist < self._distance_tol
 
 
@@ -91,32 +90,51 @@ class Contact:
         max_step: int,
         sensor_radius: float = 1.0,
         sensor_offset: Tuple[float, float, float] = (0, 0, 0.5),
+        isaac_5_0: bool = True
     ):
         self._cnt = 0
         self._max_step = max_step
         self._cs = _sensor.acquire_contact_sensor_interface()
         self._object_name = object_name
         # Add contact sensor to the object
-        omni.kit.commands.execute(
-            "IsaacSensorCreateContactSensor",
-            path="/contact_sensor",
-            parent=f"/World/Scene/{object_name}",
-            min_threshold=0,
-            max_threshold=10000000,
-            color=(1, 0, 0, 1),
-            radius=sensor_radius,
-            sensor_period=-1,
-            translation=sensor_offset,
-            visualize=True,
-        )
+        self._is_isaac_5_0 = isaac_5_0
+        if isaac_5_0: 
+            omni.kit.commands.execute(
+                "IsaacSensorCreateContactSensor",
+                path="/contact_sensor",
+                parent=f"/World/Scene/{object_name}",
+                min_threshold=0,
+                max_threshold=10000000,
+                color=(1, 0, 0, 1),
+                radius=sensor_radius,
+                sensor_period=-1,
+                translation=sensor_offset 
+            )
+        else:
+            omni.kit.commands.execute(
+                "IsaacSensorCreateContactSensor",
+                path="/contact_sensor",
+                parent=f"/World/Scene/{object_name}",
+                min_threshold=0,
+                max_threshold=10000000,
+                color=(1, 0, 0, 1),
+                radius=sensor_radius,
+                sensor_period=-1,
+                translation=sensor_offset,
+                visualize=True,
+            )
 
     def check(self) -> bool:
         # Terminate when the object has been contacted
         # for more than the specified duration
-        result = self._cs.get_sensor_sim_reading(
-            f"/World/Scene/{self._object_name}/contact_sensor"
-        ).inContact
-
+        if self._is_isaac_5_0:
+            result = self._cs.get_sensor_reading(
+                f"/World/Scene/{self._object_name}/contact_sensor"
+            ).inContact
+        else:
+            result = self._cs.get_sensor_sim_reading(
+                f"/World/Scene/{self._object_name}/contact_sensor"
+            ).inContact
         self._cnt += 1 if result else 0
         return self._cnt >= self._max_step
 
