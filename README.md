@@ -12,7 +12,7 @@
 
 ## 📚 Citation
 
-If you use this project in your research, please consider citing:
+If you find this project useful in your research, please consider citing our work:
 
 ```bibtex
 @article{liu2025pr2,
