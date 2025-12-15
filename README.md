@@ -14,22 +14,35 @@
 
 ### 🍀 Pre-Requisites
 
-Before getting started, ensure that the system has met the [System Requirement](https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/requirements.html#system-requirements) for running NVIDIA Isaac Sim and has the [NVIDIA Container](https://docs.isaacsim.omniverse.nvidia.com/5.1.0/installation/install_container.html#container-setup) setup.
+Before getting started, ensure that the system has met the [System Requirement](https://docs.isaacsim.omniverse.nvidia.com/5.0.0/installation/requirements.html#system-requirements) for running NVIDIA Isaac Sim and has the [NVIDIA Container](https://docs.isaacsim.omniverse.nvidia.com/5.0.0/installation/install_container.html#container-setup) setup.
   
  
-## 🤖 PR2 Environment Setup
+## 🤖 PR2 Environment Setup (Isaac Sim 5.0)
+⚠️ Important Notice
+
+This branch (isaacsim5.0) provides experimental support for Isaac Sim 5.0.
+
+👉 If you are new to PR2-Platform or want the most stable experience,
+we strongly recommend using the main branch, which is based on Isaac Sim 2023 and where all provided examples are more stable and fully tested.
+ 
+| Branch                      | Isaac Sim Version | Asset Version     | Stability       |
+| --------------------------- | ----------------- | ----------------- | --------------- |
+| `main`                      | Isaac Sim 2023    | `data-v0.0.1.zip` | ⭐⭐⭐⭐⭐           |
+| `isaacsim5.0` (this branch) | Isaac Sim 5.0     | `data-v0.0.2.zip` | ⚠️ Experimental |
+
 
 ### 🚀 Clone PR2-Platform repo
    ```bash
    git clone git@github.com:pr2-humanoid/PR2-Platform.git
    cd PR2-Platform/PR2
+   git checkout isaacsim5.0
    ```
 ### 🏡 Download the Asset
    Use the following commands to download and place the asset in the PR2-Platform/PR2/data directory. 
    ```bash
-   wget https://github.com/pr2-humanoid/PR2-Platform/releases/download/v0.1.0/data-v0.0.1.zip
-   unzip data-v0.0.1.zip -d . 
-   rm -rf data-v0.0.1.zip
+   wget https://github.com/pr2-humanoid/PR2-Platform/releases/download/v0.2.0/data-v0.0.2.zip
+   unzip data-v0.0.2.zip -d . 
+   rm -rf data-v0.0.2.zip
    ```
       
 ### 🐳 Setting Up Docker
