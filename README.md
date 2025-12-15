@@ -19,12 +19,27 @@ Before getting started, ensure that the system has met the system requirements [
  
  
 ## 🤖 PR2 Environment Setup
+⚠️ Isaac Sim Version Notice
+
+PR2-Platform primarily targets Isaac Sim 2023 on the main branch, where all provided examples are fully tested and more stable.
+
+We also provide experimental support for Isaac Sim 5.0:
+
+   * To use Isaac Sim 5.0, please switch to the isaacsim5.0 branch
+
+   * Follow the setup instructions in the README of isaacsim5.0 branch
+
+   * Use the corresponding asset package (data-v0.0.2.zip)
+
+👉 If you want the most stable examples and recommended workflows, please stay on the main branch (Isaac Sim 2023).
 
 ### 🚀 Clone PR2-Platform repo
    ```bash
    git clone git@github.com:pr2-humanoid/PR2-Platform.git
    cd PR2-Platform/PR2
    ```
+   By default, you are on the main branch (Isaac Sim 2023).
+   
 ### 🏡 Download the Asset
    Use the following commands to download and place the asset in the PR2-Platform/PR2/data directory. 
    ```bash
