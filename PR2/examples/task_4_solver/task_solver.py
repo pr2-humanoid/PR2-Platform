@@ -66,7 +66,7 @@ class BipedWalkingCtrlClient(PersistentTcpClient):
             "v_wb": v_wb.tolist(),
             "w_wb": w_wb.tolist(),
             "command": [vx, vy, theta],
-            "change_state": state,
+            "change_state": state,  # 0: walking; 1: standing; 2: jumping; -1: initialization
         }
         joint_efforts = self.send_request(msg)
 
