@@ -4,7 +4,7 @@ from typing import Dict
 from omni.isaac.core.prims import XFormPrim
 from omni.isaac.core.utils.stage import add_reference_to_stage
 
-import pr2 
+import pr2
 from pr2.objects.articulated_object import ArticulatedObject
 from pr2.objects.object import Object
 
